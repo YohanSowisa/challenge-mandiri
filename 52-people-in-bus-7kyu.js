@@ -1,13 +1,12 @@
 var number = function(busStops){
-  let inBus = []
-  let outBus = []
+  let total = 0
 
   for (let i = 0; i < busStops.length; i++) {
-    inBus.push(busStops[i][0])
-    outBus.push(busStops[i][1])
+    total += busStops[i][0]
+    total -= busStops[i][1]
   }
   
-  return inBus.reduce((acc, cur) => acc + cur, 0) - outBus.reduce((acc, cur) => acc + cur, 0)
+  return total
 }
 
 // const number = (busStops) => busStops.reduce((acc, [on, off]) => acc + on - off, 0);
